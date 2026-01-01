@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body class="results-page">
+
+    <h1>Prediction Results</h1>
+
+    <div class="results-shell">
+        <div class="results-grid">
+            <!-- LEFT: text results -->
+            <div id="results" class="results-card"></div>
+
+            <!-- RIGHT: chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <span class="chart-title">Hourly Demand (Next 6 Hours)</span>
+                    <span class="chart-legend">
+                        <span class="legend-box"></span>
+                        Predicted rides
+                    </span>
+                </div>
+                <canvas id="hourlyChart"></canvas>
+            </div>
+        </div>
+
+        <button class="secondary-btn" onclick="window.location.href='index.html'">
+            ← New Prediction
+        </button>
+    </div>
+
+</body>
+</html>

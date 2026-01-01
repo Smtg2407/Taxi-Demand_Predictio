@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taxi Demand Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="title-bar">
+  <div class="logo">🚖</div>
+  <h1>Taxi Demand Predictor</h1>
+</div>
+    <form id="demandForm">
+        <label for="city">City:</label>
+        <input type="text" id="city" placeholder="Enter city" required>
+
+        <label for="datetime">Date & Time:</label>
+        <input type="datetime-local" id="datetime" required>
+
+        <label for="weather">Weather:</label>
+        <select id="weather">
+            <option value="clear">Clear</option>
+            <option value="cloudy">Cloudy</option>
+            <option value="rainy">Rainy</option>
+            <option value="storm">Storm</option>
+        </select>
+
+        <label for="traffic">Traffic:</label>
+        <select id="traffic">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+        </select>
+
+       <input type="checkbox" id="event">
+<label for="event">Special event in area (concert, match, etc.)</label>
+
+        <button type="submit">Predict Demand</button>
+    </form>
+  <footer class="app-footer">
+      <p>
+        Built with <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span> &amp;
+        <span>Machine Learning</span>.
+      </p>
+    </footer>
+    <script src="app.js" defer></script>
+</body>
+</html>

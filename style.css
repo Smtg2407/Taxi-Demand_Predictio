@@ -1,0 +1,226 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= GLOBAL ================= */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  color: #0f172a;
+
+  /* white + pastel gradient background */
+  background:
+    radial-gradient(circle at top left, #e0e7ff, transparent 60%),
+    radial-gradient(circle at bottom right, #fce7f3, transparent 60%),
+    linear-gradient(to bottom, #ffffff, #f8fafc);
+}
+
+/* ================= TITLE BAR ================= */
+.title-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  margin-bottom: 26px;
+
+  background: linear-gradient(120deg, #6366f1, #ec4899);
+  box-shadow: 0 18px 40px rgba(99, 102, 241, 0.35);
+}
+
+.title-bar h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* taxi icon */
+.logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(145deg, #facc15, #fb7185);
+  box-shadow: 0 0 22px rgba(251, 113, 133, 0.6);
+}
+
+/* ================= GLASS CARD ================= */
+.card,
+.results-card,
+.chart-card {
+  width: 100%;
+  max-width: 520px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+
+  border-radius: 24px;
+  padding: 26px;
+
+  box-shadow:
+    0 30px 60px rgba(99, 102, 241, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  animation: fadeUp 0.6s ease both;
+}
+
+/* entry animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================= FORM ================= */
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+select {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+
+  border-radius: 999px;
+  border: 1px solid #c7d2fe;
+  background: #ffffff;
+  color: #0f172a;
+
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* checkbox row */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  box-shadow: 0 16px 36px rgba(236, 72, 153, 0.45);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px rgba(236, 72, 153, 0.55);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 12px 28px rgba(236, 72, 153, 0.45);
+}
+
+/* ================= RESULTS ================= */
+#resultsSection {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 24px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+}
+
+/* chart canvas */
+canvas {
+  width: 100% !important;
+  height: 400px !important;
+
+  background: linear-gradient(180deg, #eef2ff, #ffffff);
+  border-radius: 18px;
+  padding: 10px;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background:
+    radial-gradient(circle at top left, #0f172a, transparent 60%),
+    radial-gradient(circle at bottom right, #312e81, transparent 60%),
+    #020617;
+  color: #e5edff;
+}
+
+body.dark .card,
+body.dark .results-card,
+body.dark .chart-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.app-container {
+  position: relative;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px 26px;
+}
+
+.app-container::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  z-index: -1;
+}
